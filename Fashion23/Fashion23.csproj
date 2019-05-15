@@ -119,6 +119,11 @@
     <Content Include="Content2\img\bg-img\breadcumb.jpg" />
     <Content Include="Content2\img\bg-img\breadcumb2.jpg" />
     <Content Include="Content2\img\bg-img\LeggingsPants.jpg" />
+    <Content Include="Content2\img\bg-img\nike-1.png" />
+    <Content Include="Content2\img\bg-img\nike-2.png" />
+    <Content Include="Content2\img\bg-img\nike-3.png" />
+    <Content Include="Content2\img\bg-img\nike-4.jpg" />
+    <Content Include="Content2\img\bg-img\nike-background.png" />
     <Content Include="Content2\img\bg-img\NIkeHoodie.jpg" />
     <Content Include="Content2\img\bg-img\rp1.jpg" />
     <Content Include="Content2\img\bg-img\rp2.jpg" />
@@ -191,6 +196,7 @@
     <Content Include="Content\fonts\icomoon\style.css" />
     <Content Include="Content\images\about_1.jpg" />
     <Content Include="Content\images\about_1.png" />
+    <Content Include="Content\images\adidas-logo.png" />
     <Content Include="Content\images\blog_1.jpg" />
     <Content Include="Content\images\children.jpg" />
     <Content Include="Content\images\cloth_1.jpg" />
@@ -202,6 +208,7 @@
     <Content Include="Content\images\contact-1.jpg" />
     <Content Include="Content\images\contact-2.jpg" />
     <Content Include="Content\images\contact-3.jpg" />
+    <Content Include="Content\images\contact-4.jpg" />
     <Content Include="Content\images\hero_1.jpg" />
     <Content Include="Content\images\hero_1.png" />
     <Content Include="Content\images\hero_2.jpg" />
@@ -247,9 +254,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AddidasController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ConverseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenController.cs" />
+    <Compile Include="Controllers\NikeController.cs" />
+    <Compile Include="Controllers\PumaController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\VansController.cs" />
+    <Compile Include="Controllers\WomenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -376,11 +391,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
-    <Content Include="Views\Shop\Nike.cshtml" />
-    <Content Include="Views\Shop\Addidas.cshtml" />
-    <Content Include="Views\Shop\Vans.cshtml" />
-    <Content Include="Views\Shop\Converse.cshtml" />
-    <Content Include="Views\Shop\Puma.cshtml" />
+    <Content Include="Views\Nike\Index.cshtml" />
+    <Content Include="Views\Addidas\Index.cshtml" />
+    <Content Include="Views\Vans\Index.cshtml" />
+    <Content Include="Views\Converse\Index.cshtml" />
+    <Content Include="Views\Puma\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Men\Index.cshtml" />
+    <Content Include="Views\Women\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

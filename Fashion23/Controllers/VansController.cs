@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace Fashion23.Controllers
 {
-    public class ShopController : Controller
+    public class VansController : Controller
     {
-        // GET: Shop
+        // GET: Vans
         public ActionResult Index()
         {
             return View();
         }
-       
     }
 }

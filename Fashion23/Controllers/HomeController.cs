@@ -11,6 +11,7 @@ namespace Fashion23.Controllers
         // GET: Home
         public ActionResult Index()
         {
+
             return View();
         }
     }
