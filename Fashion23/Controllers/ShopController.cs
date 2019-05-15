@@ -13,5 +13,25 @@ namespace Fashion23.Controllers
         {
             return View();
         }
+        public ActionResult Nike()
+        {
+            return View();
+        }
+        public ActionResult Addidas()
+        {
+            return View();
+        }
+        public ActionResult Vans()
+        {
+            return View();
+        }
+        public ActionResult Converse()
+        {
+            return View();
+        }
+        public ActionResult Puma()
+        {
+            return View();
+        }
     }
 }

@@ -376,6 +376,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\Nike.cshtml" />
+    <Content Include="Views\Shop\Addidas.cshtml" />
+    <Content Include="Views\Shop\Vans.cshtml" />
+    <Content Include="Views\Shop\Converse.cshtml" />
+    <Content Include="Views\Shop\Puma.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
