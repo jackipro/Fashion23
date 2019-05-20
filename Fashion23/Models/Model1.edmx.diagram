@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4ae44c79487d47ce899e798834a068dc" Name="Diagram1">
+        <EntityTypeShape EntityType="CsK23T1bModel1.Brand" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Category_Product" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Contact_Infomation" Width="1.5" PointX="14" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Contact_Infomation_Suplier" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Customer" Width="1.5" PointX="11.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.GioHang" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.GioiTinh" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Login" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Mau_sac" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Order" Width="1.5" PointX="9.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Product" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Shopping_Cart_Details" Width="1.5" PointX="12.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Shopping_Details_Cart" Width="1.5" PointX="9.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Size" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.Supplier" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CsK23T1bModel1.sysdiagram" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Product_Category_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Contact_Infomation_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Supplier_Contact_Infomation_Suplier" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_GioHang_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Order_GioHang" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Shopping_Cart_Details_GioHang" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Shopping_Details_Cart_GioHang" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_GioiTinh_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Product_Mau_sac" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Product_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Product_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Product_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="CsK23T1bModel1.FK_Shopping_Cart_Details_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
