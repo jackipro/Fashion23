@@ -1,0 +1,993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CsK23T1bModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="Ma_TH" />
+          </Key>
+          <Property Name="Ma_TH" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ten_TH" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Ma_sp" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Category_Product">
+          <Key>
+            <PropertyRef Name="Ma_Loai" />
+          </Key>
+          <Property Name="Ma_Loai" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ma_sp" Type="varchar" MaxLength="20" />
+          <Property Name="Ten_loai" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Contact_Infomation">
+          <Key>
+            <PropertyRef Name="Link_FB" />
+            <PropertyRef Name="Ten_KH" />
+          </Key>
+          <Property Name="Dia_chi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sdt" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Link_FB" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Ten_KH" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Noi_Dung" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Ma_KH" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact_Infomation_Suplier">
+          <Key>
+            <PropertyRef Name="Ma_CFS" />
+          </Key>
+          <Property Name="Ma_CFS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Sdt_NCC" Type="int" />
+          <Property Name="Email_NCC" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Ma_KH" />
+          </Key>
+          <Property Name="Ma_KH" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Ten_KH" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sdt" Type="varchar" MaxLength="13" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Loai_KH" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GioHang">
+          <Key>
+            <PropertyRef Name="MA_GH" />
+          </Key>
+          <Property Name="MA_GH" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ma_Sp" Type="varchar" MaxLength="20" />
+          <Property Name="Trang_thai" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="GioiTinh">
+          <Key>
+            <PropertyRef Name="Gioi_Tinh" />
+          </Key>
+          <Property Name="Gioi_Tinh" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ma_Sp" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="User" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="User" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mau_sac">
+          <Key>
+            <PropertyRef Name="Ma_mau" />
+          </Key>
+          <Property Name="Ma_mau" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ten_mau" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Ma_DH" />
+          </Key>
+          <Property Name="Ma_DH" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ma_GH" Type="varchar" MaxLength="20" />
+          <Property Name="Tinhtrang_DH" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ngay_tao" Type="datetime" />
+          <Property Name="Nguoi_capnhat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Diachi_nguoinhan" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Ma_SP" />
+          </Key>
+          <Property Name="Ma_SP" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ten_sp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Giaban" Type="money" />
+          <Property Name="Soluong_sp" Type="int" />
+          <Property Name="Ngay_tao" Type="datetime" />
+          <Property Name="Ma_Loai" Type="varchar" MaxLength="20" />
+          <Property Name="Hang_sx" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mota_sp" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ma_Size" Type="varchar" MaxLength="50" />
+          <Property Name="Ma_mau" Type="varchar" MaxLength="50" />
+          <Property Name="Avatar" Type="image" Nullable="false" />
+          <Property Name="Ma_DH" Type="varchar" MaxLength="20" />
+          <Property Name="Ma_NCC" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Shopping_Cart_Details">
+          <Key>
+            <PropertyRef Name="Ma_CTGH" />
+          </Key>
+          <Property Name="Ma_CTGH" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MA_GH" Type="varchar" MaxLength="20" />
+          <Property Name="Soluong_SP" Type="int" />
+          <Property Name="Tong_ThanhToan" Type="money" />
+          <Property Name="Ma_SP" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Shopping_Details_Cart">
+          <Key>
+            <PropertyRef Name="Ma_CTGH" />
+          </Key>
+          <Property Name="Ma_CTGH" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ma_GH" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Soluong" Type="int" />
+          <Property Name="Tong_Thanh_Toan" Type="money" />
+        </EntityType>
+        <EntityType Name="Size">
+          <Key>
+            <PropertyRef Name="Ma_Size" />
+          </Key>
+          <Property Name="Ma_Size" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ten_Size" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Ma_NCC" />
+          </Key>
+          <Property Name="Ma_NCC" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ten_NCC" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi_NCC" Type="nvarchar" MaxLength="100" />
+          <Property Name="Gia_mua" Type="money" />
+          <Property Name="Ma_CFS" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Contact_Infomation_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Contact_Infomation" Type="Self.Contact_Infomation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Ma_KH" />
+            </Principal>
+            <Dependent Role="Contact_Infomation">
+              <PropertyRef Name="Ma_KH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GioHang_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="GioHang" Type="Self.GioHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Ma_SP" />
+            </Principal>
+            <Dependent Role="GioHang">
+              <PropertyRef Name="Ma_Sp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GioiTinh_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="GioiTinh" Type="Self.GioiTinh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Ma_SP" />
+            </Principal>
+            <Dependent Role="GioiTinh">
+              <PropertyRef Name="Ma_Sp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_GioHang">
+          <End Role="GioHang" Type="Self.GioHang" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GioHang">
+              <PropertyRef Name="MA_GH" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Ma_GH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Category_Product">
+          <End Role="Category_Product" Type="Self.Category_Product" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category_Product">
+              <PropertyRef Name="Ma_Loai" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_Loai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Mau_sac">
+          <End Role="Mau_sac" Type="Self.Mau_sac" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mau_sac">
+              <PropertyRef Name="Ma_mau" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_mau" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Ma_DH" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_DH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Size">
+          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="Ma_Size" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_Size" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Ma_NCC" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_NCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shopping_Cart_Details_GioHang">
+          <End Role="GioHang" Type="Self.GioHang" Multiplicity="0..1" />
+          <End Role="Shopping_Cart_Details" Type="Self.Shopping_Cart_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GioHang">
+              <PropertyRef Name="MA_GH" />
+            </Principal>
+            <Dependent Role="Shopping_Cart_Details">
+              <PropertyRef Name="MA_GH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shopping_Cart_Details_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Shopping_Cart_Details" Type="Self.Shopping_Cart_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Ma_SP" />
+            </Principal>
+            <Dependent Role="Shopping_Cart_Details">
+              <PropertyRef Name="Ma_SP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shopping_Details_Cart_GioHang">
+          <End Role="GioHang" Type="Self.GioHang" Multiplicity="1" />
+          <End Role="Shopping_Details_Cart" Type="Self.Shopping_Details_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GioHang">
+              <PropertyRef Name="MA_GH" />
+            </Principal>
+            <Dependent Role="Shopping_Details_Cart">
+              <PropertyRef Name="Ma_GH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier_Contact_Infomation_Suplier">
+          <End Role="Contact_Infomation_Suplier" Type="Self.Contact_Infomation_Suplier" Multiplicity="0..1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact_Infomation_Suplier">
+              <PropertyRef Name="Ma_CFS" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="Ma_CFS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CsK23T1bModel1StoreContainer">
+          <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category_Product" EntityType="Self.Category_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact_Infomation" EntityType="Self.Contact_Infomation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact_Infomation_Suplier" EntityType="Self.Contact_Infomation_Suplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GioHang" EntityType="Self.GioHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GioiTinh" EntityType="Self.GioiTinh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mau_sac" EntityType="Self.Mau_sac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Cart_Details" EntityType="Self.Shopping_Cart_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Details_Cart" EntityType="Self.Shopping_Details_Cart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contact_Infomation_Customer" Association="Self.FK_Contact_Infomation_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Contact_Infomation" EntitySet="Contact_Infomation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GioHang_Product" Association="Self.FK_GioHang_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="GioHang" EntitySet="GioHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GioiTinh_Product" Association="Self.FK_GioiTinh_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="GioiTinh" EntitySet="GioiTinh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_GioHang" Association="Self.FK_Order_GioHang">
+            <End Role="GioHang" EntitySet="GioHang" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category_Product" Association="Self.FK_Product_Category_Product">
+            <End Role="Category_Product" EntitySet="Category_Product" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Mau_sac" Association="Self.FK_Product_Mau_sac">
+            <End Role="Mau_sac" EntitySet="Mau_sac" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Order" Association="Self.FK_Product_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Size" Association="Self.FK_Product_Size">
+            <End Role="Size" EntitySet="Size" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Supplier" Association="Self.FK_Product_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shopping_Cart_Details_GioHang" Association="Self.FK_Shopping_Cart_Details_GioHang">
+            <End Role="GioHang" EntitySet="GioHang" />
+            <End Role="Shopping_Cart_Details" EntitySet="Shopping_Cart_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shopping_Cart_Details_Product" Association="Self.FK_Shopping_Cart_Details_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Shopping_Cart_Details" EntitySet="Shopping_Cart_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shopping_Details_Cart_GioHang" Association="Self.FK_Shopping_Details_Cart_GioHang">
+            <End Role="GioHang" EntitySet="GioHang" />
+            <End Role="Shopping_Details_Cart" EntitySet="Shopping_Details_Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplier_Contact_Infomation_Suplier" Association="Self.FK_Supplier_Contact_Infomation_Suplier">
+            <End Role="Contact_Infomation_Suplier" EntitySet="Contact_Infomation_Suplier" />
+            <End Role="Supplier" EntitySet="Supplier" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CsK23T1bModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Ma_TH" />
+          </Key>
+          <Property Name="Ma_TH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ten_TH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ma_sp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Category_Product">
+          <Key>
+            <PropertyRef Name="Ma_Loai" />
+          </Key>
+          <Property Name="Ma_Loai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ma_sp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Ten_loai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_Category_Product" FromRole="Category_Product" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Contact_Infomation">
+          <Key>
+            <PropertyRef Name="Link_FB" />
+            <PropertyRef Name="Ten_KH" />
+          </Key>
+          <Property Name="Dia_chi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sdt" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Link_FB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ten_KH" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Noi_Dung" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Ma_KH" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Contact_Infomation_Customer" FromRole="Contact_Infomation" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Contact_Infomation_Suplier">
+          <Key>
+            <PropertyRef Name="Ma_CFS" />
+          </Key>
+          <Property Name="Ma_CFS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sdt_NCC" Type="Int32" />
+          <Property Name="Email_NCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Suppliers" Relationship="Self.FK_Supplier_Contact_Infomation_Suplier" FromRole="Contact_Infomation_Suplier" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Ma_KH" />
+          </Key>
+          <Property Name="Ma_KH" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ten_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sdt" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Loai_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contact_Infomation" Relationship="Self.FK_Contact_Infomation_Customer" FromRole="Customer" ToRole="Contact_Infomation" />
+        </EntityType>
+        <EntityType Name="GioHang">
+          <Key>
+            <PropertyRef Name="MA_GH" />
+          </Key>
+          <Property Name="MA_GH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ma_Sp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Trang_thai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_GioHang_Product" FromRole="GioHang" ToRole="Product" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_GioHang" FromRole="GioHang" ToRole="Order" />
+          <NavigationProperty Name="Shopping_Cart_Details" Relationship="Self.FK_Shopping_Cart_Details_GioHang" FromRole="GioHang" ToRole="Shopping_Cart_Details" />
+          <NavigationProperty Name="Shopping_Details_Cart" Relationship="Self.FK_Shopping_Details_Cart_GioHang" FromRole="GioHang" ToRole="Shopping_Details_Cart" />
+        </EntityType>
+        <EntityType Name="GioiTinh">
+          <Key>
+            <PropertyRef Name="Gioi_Tinh" />
+          </Key>
+          <Property Name="Gioi_Tinh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ma_Sp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_GioiTinh_Product" FromRole="GioiTinh" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="User" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="User" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mau_sac">
+          <Key>
+            <PropertyRef Name="Ma_mau" />
+          </Key>
+          <Property Name="Ma_mau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ten_mau" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_Mau_sac" FromRole="Mau_sac" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Ma_DH" />
+          </Key>
+          <Property Name="Ma_DH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ma_GH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Tinhtrang_DH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ngay_tao" Type="DateTime" Precision="3" />
+          <Property Name="Nguoi_capnhat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Diachi_nguoinhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GioHang" Relationship="Self.FK_Order_GioHang" FromRole="Order" ToRole="GioHang" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_Order" FromRole="Order" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Ma_SP" />
+          </Key>
+          <Property Name="Ma_SP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ten_sp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Giaban" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Soluong_sp" Type="Int32" />
+          <Property Name="Ngay_tao" Type="DateTime" Precision="3" />
+          <Property Name="Ma_Loai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Hang_sx" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mota_sp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ma_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ma_mau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Ma_DH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Ma_NCC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Category_Product" Relationship="Self.FK_Product_Category_Product" FromRole="Product" ToRole="Category_Product" />
+          <NavigationProperty Name="GioHangs" Relationship="Self.FK_GioHang_Product" FromRole="Product" ToRole="GioHang" />
+          <NavigationProperty Name="GioiTinhs" Relationship="Self.FK_GioiTinh_Product" FromRole="Product" ToRole="GioiTinh" />
+          <NavigationProperty Name="Mau_sac" Relationship="Self.FK_Product_Mau_sac" FromRole="Product" ToRole="Mau_sac" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Product_Order" FromRole="Product" ToRole="Order" />
+          <NavigationProperty Name="Size" Relationship="Self.FK_Product_Size" FromRole="Product" ToRole="Size" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_Product_Supplier" FromRole="Product" ToRole="Supplier" />
+          <NavigationProperty Name="Shopping_Cart_Details" Relationship="Self.FK_Shopping_Cart_Details_Product" FromRole="Product" ToRole="Shopping_Cart_Details" />
+        </EntityType>
+        <EntityType Name="Shopping_Cart_Details">
+          <Key>
+            <PropertyRef Name="Ma_CTGH" />
+          </Key>
+          <Property Name="Ma_CTGH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MA_GH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Soluong_SP" Type="Int32" />
+          <Property Name="Tong_ThanhToan" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Ma_SP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GioHang" Relationship="Self.FK_Shopping_Cart_Details_GioHang" FromRole="Shopping_Cart_Details" ToRole="GioHang" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Shopping_Cart_Details_Product" FromRole="Shopping_Cart_Details" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Shopping_Details_Cart">
+          <Key>
+            <PropertyRef Name="Ma_CTGH" />
+          </Key>
+          <Property Name="Ma_CTGH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ma_GH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Soluong" Type="Int32" />
+          <Property Name="Tong_Thanh_Toan" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="GioHang" Relationship="Self.FK_Shopping_Details_Cart_GioHang" FromRole="Shopping_Details_Cart" ToRole="GioHang" />
+        </EntityType>
+        <EntityType Name="Size">
+          <Key>
+            <PropertyRef Name="Ma_Size" />
+          </Key>
+          <Property Name="Ma_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ten_Size" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_Size" FromRole="Size" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Ma_NCC" />
+          </Key>
+          <Property Name="Ma_NCC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ten_NCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi_NCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Gia_mua" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Ma_CFS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contact_Infomation_Suplier" Relationship="Self.FK_Supplier_Contact_Infomation_Suplier" FromRole="Supplier" ToRole="Contact_Infomation_Suplier" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_Supplier" FromRole="Supplier" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Product_Category_Product">
+          <End Role="Category_Product" Type="Self.Category_Product" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category_Product">
+              <PropertyRef Name="Ma_Loai" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_Loai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contact_Infomation_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Contact_Infomation" Type="Self.Contact_Infomation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Ma_KH" />
+            </Principal>
+            <Dependent Role="Contact_Infomation">
+              <PropertyRef Name="Ma_KH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier_Contact_Infomation_Suplier">
+          <End Role="Contact_Infomation_Suplier" Type="Self.Contact_Infomation_Suplier" Multiplicity="0..1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact_Infomation_Suplier">
+              <PropertyRef Name="Ma_CFS" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="Ma_CFS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GioHang_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="GioHang" Type="Self.GioHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Ma_SP" />
+            </Principal>
+            <Dependent Role="GioHang">
+              <PropertyRef Name="Ma_Sp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_GioHang">
+          <End Role="GioHang" Type="Self.GioHang" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GioHang">
+              <PropertyRef Name="MA_GH" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Ma_GH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shopping_Cart_Details_GioHang">
+          <End Role="GioHang" Type="Self.GioHang" Multiplicity="0..1" />
+          <End Role="Shopping_Cart_Details" Type="Self.Shopping_Cart_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GioHang">
+              <PropertyRef Name="MA_GH" />
+            </Principal>
+            <Dependent Role="Shopping_Cart_Details">
+              <PropertyRef Name="MA_GH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shopping_Details_Cart_GioHang">
+          <End Role="GioHang" Type="Self.GioHang" Multiplicity="1" />
+          <End Role="Shopping_Details_Cart" Type="Self.Shopping_Details_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GioHang">
+              <PropertyRef Name="MA_GH" />
+            </Principal>
+            <Dependent Role="Shopping_Details_Cart">
+              <PropertyRef Name="Ma_GH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GioiTinh_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="GioiTinh" Type="Self.GioiTinh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Ma_SP" />
+            </Principal>
+            <Dependent Role="GioiTinh">
+              <PropertyRef Name="Ma_Sp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Mau_sac">
+          <End Role="Mau_sac" Type="Self.Mau_sac" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mau_sac">
+              <PropertyRef Name="Ma_mau" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_mau" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Ma_DH" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_DH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Size">
+          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="Ma_Size" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_Size" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Ma_NCC" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Ma_NCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shopping_Cart_Details_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Shopping_Cart_Details" Type="Self.Shopping_Cart_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Ma_SP" />
+            </Principal>
+            <Dependent Role="Shopping_Cart_Details">
+              <PropertyRef Name="Ma_SP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CsK23T1bEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Brands" EntityType="Self.Brand" />
+          <EntitySet Name="Category_Product" EntityType="Self.Category_Product" />
+          <EntitySet Name="Contact_Infomation" EntityType="Self.Contact_Infomation" />
+          <EntitySet Name="Contact_Infomation_Suplier" EntityType="Self.Contact_Infomation_Suplier" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="GioHangs" EntityType="Self.GioHang" />
+          <EntitySet Name="GioiTinhs" EntityType="Self.GioiTinh" />
+          <EntitySet Name="Logins" EntityType="Self.Login" />
+          <EntitySet Name="Mau_sac" EntityType="Self.Mau_sac" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Shopping_Cart_Details" EntityType="Self.Shopping_Cart_Details" />
+          <EntitySet Name="Shopping_Details_Cart" EntityType="Self.Shopping_Details_Cart" />
+          <EntitySet Name="Sizes" EntityType="Self.Size" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Product_Category_Product" Association="Self.FK_Product_Category_Product">
+            <End Role="Category_Product" EntitySet="Category_Product" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contact_Infomation_Customer" Association="Self.FK_Contact_Infomation_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Contact_Infomation" EntitySet="Contact_Infomation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplier_Contact_Infomation_Suplier" Association="Self.FK_Supplier_Contact_Infomation_Suplier">
+            <End Role="Contact_Infomation_Suplier" EntitySet="Contact_Infomation_Suplier" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GioHang_Product" Association="Self.FK_GioHang_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="GioHang" EntitySet="GioHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_GioHang" Association="Self.FK_Order_GioHang">
+            <End Role="GioHang" EntitySet="GioHangs" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shopping_Cart_Details_GioHang" Association="Self.FK_Shopping_Cart_Details_GioHang">
+            <End Role="GioHang" EntitySet="GioHangs" />
+            <End Role="Shopping_Cart_Details" EntitySet="Shopping_Cart_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shopping_Details_Cart_GioHang" Association="Self.FK_Shopping_Details_Cart_GioHang">
+            <End Role="GioHang" EntitySet="GioHangs" />
+            <End Role="Shopping_Details_Cart" EntitySet="Shopping_Details_Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GioiTinh_Product" Association="Self.FK_GioiTinh_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="GioiTinh" EntitySet="GioiTinhs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Mau_sac" Association="Self.FK_Product_Mau_sac">
+            <End Role="Mau_sac" EntitySet="Mau_sac" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Order" Association="Self.FK_Product_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Size" Association="Self.FK_Product_Size">
+            <End Role="Size" EntitySet="Sizes" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Supplier" Association="Self.FK_Product_Supplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shopping_Cart_Details_Product" Association="Self.FK_Shopping_Cart_Details_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Shopping_Cart_Details" EntitySet="Shopping_Cart_Details" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CsK23T1bModel1StoreContainer" CdmEntityContainer="CsK23T1bEntities">
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Brand">
+              <MappingFragment StoreEntitySet="Brands">
+                <ScalarProperty Name="Ma_TH" ColumnName="Ma_TH" />
+                <ScalarProperty Name="Ten_TH" ColumnName="Ten_TH" />
+                <ScalarProperty Name="Ma_sp" ColumnName="Ma_sp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category_Product">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Category_Product">
+              <MappingFragment StoreEntitySet="Category_Product">
+                <ScalarProperty Name="Ma_Loai" ColumnName="Ma_Loai" />
+                <ScalarProperty Name="ma_sp" ColumnName="ma_sp" />
+                <ScalarProperty Name="Ten_loai" ColumnName="Ten_loai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact_Infomation">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Contact_Infomation">
+              <MappingFragment StoreEntitySet="Contact_Infomation">
+                <ScalarProperty Name="Dia_chi" ColumnName="Dia_chi" />
+                <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+                <ScalarProperty Name="Link_FB" ColumnName="Link_FB" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Ten_KH" ColumnName="Ten_KH" />
+                <ScalarProperty Name="Noi_Dung" ColumnName="Noi_Dung" />
+                <ScalarProperty Name="Ma_KH" ColumnName="Ma_KH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact_Infomation_Suplier">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Contact_Infomation_Suplier">
+              <MappingFragment StoreEntitySet="Contact_Infomation_Suplier">
+                <ScalarProperty Name="Ma_CFS" ColumnName="Ma_CFS" />
+                <ScalarProperty Name="Sdt_NCC" ColumnName="Sdt_NCC" />
+                <ScalarProperty Name="Email_NCC" ColumnName="Email_NCC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Ma_KH" ColumnName="Ma_KH" />
+                <ScalarProperty Name="Ten_KH" ColumnName="Ten_KH" />
+                <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Loai_KH" ColumnName="Loai_KH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GioHangs">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.GioHang">
+              <MappingFragment StoreEntitySet="GioHang">
+                <ScalarProperty Name="MA_GH" ColumnName="MA_GH" />
+                <ScalarProperty Name="Ma_Sp" ColumnName="Ma_Sp" />
+                <ScalarProperty Name="Trang_thai" ColumnName="Trang_thai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GioiTinhs">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.GioiTinh">
+              <MappingFragment StoreEntitySet="GioiTinh">
+                <ScalarProperty Name="Gioi_Tinh" ColumnName="Gioi_Tinh" />
+                <ScalarProperty Name="Ma_Sp" ColumnName="Ma_Sp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mau_sac">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Mau_sac">
+              <MappingFragment StoreEntitySet="Mau_sac">
+                <ScalarProperty Name="Ma_mau" ColumnName="Ma_mau" />
+                <ScalarProperty Name="Ten_mau" ColumnName="Ten_mau" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Ma_DH" ColumnName="Ma_DH" />
+                <ScalarProperty Name="Ma_GH" ColumnName="Ma_GH" />
+                <ScalarProperty Name="Tinhtrang_DH" ColumnName="Tinhtrang_DH" />
+                <ScalarProperty Name="Ngay_tao" ColumnName="Ngay_tao" />
+                <ScalarProperty Name="Nguoi_capnhat" ColumnName="Nguoi_capnhat" />
+                <ScalarProperty Name="Diachi_nguoinhan" ColumnName="Diachi_nguoinhan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Ma_SP" ColumnName="Ma_SP" />
+                <ScalarProperty Name="Ten_sp" ColumnName="Ten_sp" />
+                <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+                <ScalarProperty Name="Soluong_sp" ColumnName="Soluong_sp" />
+                <ScalarProperty Name="Ngay_tao" ColumnName="Ngay_tao" />
+                <ScalarProperty Name="Ma_Loai" ColumnName="Ma_Loai" />
+                <ScalarProperty Name="Hang_sx" ColumnName="Hang_sx" />
+                <ScalarProperty Name="Mota_sp" ColumnName="Mota_sp" />
+                <ScalarProperty Name="Ma_Size" ColumnName="Ma_Size" />
+                <ScalarProperty Name="Ma_mau" ColumnName="Ma_mau" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Ma_DH" ColumnName="Ma_DH" />
+                <ScalarProperty Name="Ma_NCC" ColumnName="Ma_NCC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Cart_Details">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Shopping_Cart_Details">
+              <MappingFragment StoreEntitySet="Shopping_Cart_Details">
+                <ScalarProperty Name="Ma_CTGH" ColumnName="Ma_CTGH" />
+                <ScalarProperty Name="MA_GH" ColumnName="MA_GH" />
+                <ScalarProperty Name="Soluong_SP" ColumnName="Soluong_SP" />
+                <ScalarProperty Name="Tong_ThanhToan" ColumnName="Tong_ThanhToan" />
+                <ScalarProperty Name="Ma_SP" ColumnName="Ma_SP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Details_Cart">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Shopping_Details_Cart">
+              <MappingFragment StoreEntitySet="Shopping_Details_Cart">
+                <ScalarProperty Name="Ma_CTGH" ColumnName="Ma_CTGH" />
+                <ScalarProperty Name="Ma_GH" ColumnName="Ma_GH" />
+                <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+                <ScalarProperty Name="Tong_Thanh_Toan" ColumnName="Tong_Thanh_Toan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sizes">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Size">
+              <MappingFragment StoreEntitySet="Size">
+                <ScalarProperty Name="Ma_Size" ColumnName="Ma_Size" />
+                <ScalarProperty Name="Ten_Size" ColumnName="Ten_Size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="Ma_NCC" ColumnName="Ma_NCC" />
+                <ScalarProperty Name="Ten_NCC" ColumnName="Ten_NCC" />
+                <ScalarProperty Name="DiaChi_NCC" ColumnName="DiaChi_NCC" />
+                <ScalarProperty Name="Gia_mua" ColumnName="Gia_mua" />
+                <ScalarProperty Name="Ma_CFS" ColumnName="Ma_CFS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CsK23T1bModel1.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
