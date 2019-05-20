@@ -28,18 +28,13 @@ namespace Fashion23.Models
         public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Category_Product> Category_Product { get; set; }
         public virtual DbSet<Contact_Infomation> Contact_Infomation { get; set; }
-        public virtual DbSet<Contact_Infomation_Suplier> Contact_Infomation_Suplier { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<GioHang> GioHangs { get; set; }
         public virtual DbSet<GioiTinh> GioiTinhs { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
-        public virtual DbSet<Mau_sac> Mau_sac { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Shopping_Cart_Details> Shopping_Cart_Details { get; set; }
         public virtual DbSet<Shopping_Details_Cart> Shopping_Details_Cart { get; set; }
         public virtual DbSet<Size> Sizes { get; set; }
-        public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

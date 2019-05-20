@@ -21,7 +21,6 @@ namespace Fashion23.Models
         }
     
         public string Ma_Loai { get; set; }
-        public string ma_sp { get; set; }
         public string Ten_loai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

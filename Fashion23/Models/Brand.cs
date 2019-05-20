@@ -14,8 +14,18 @@ namespace Fashion23.Models
     
     public partial class Brand
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Brand()
+        {
+            this.Products = new HashSet<Product>();
+        }
+    
         public string Ma_TH { get; set; }
         public string Ten_TH { get; set; }
         public string Ma_sp { get; set; }
+    
+        public virtual Product Product { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

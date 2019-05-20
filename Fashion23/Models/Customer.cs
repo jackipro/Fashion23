@@ -25,8 +25,10 @@ namespace Fashion23.Models
         public string Sdt { get; set; }
         public string Email { get; set; }
         public string Loai_KH { get; set; }
+        public string Ma_Sp { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contact_Infomation> Contact_Infomation { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

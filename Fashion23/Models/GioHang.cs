@@ -18,7 +18,6 @@ namespace Fashion23.Models
         public GioHang()
         {
             this.Orders = new HashSet<Order>();
-            this.Shopping_Cart_Details = new HashSet<Shopping_Cart_Details>();
             this.Shopping_Details_Cart = new HashSet<Shopping_Details_Cart>();
         }
     
@@ -29,8 +28,6 @@ namespace Fashion23.Models
         public virtual Product Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Shopping_Cart_Details> Shopping_Cart_Details { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Shopping_Details_Cart> Shopping_Details_Cart { get; set; }
     }
