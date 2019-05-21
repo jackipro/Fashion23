@@ -45,20 +45,13 @@
                         <nav class="site-navigation text-right text-md-center" role="navigation">
                             <ul class="site-menu js-clone-nav d-none d-lg-block">
                                 <li class="has-children active">
-                                    <a href="index.html">Collection</a>
+                                    <a href="@Url.Action("Index","Shop")">Collection</a>
                                     <ul class="dropdown">
-                                        <li>@Html.ActionLink("Men", "Index", "Men")</li>
-                                        <li><a href="#">Women</a></li>
-                                        <li class="has-children">
-                                            <a href="#">Brands</a>
-                                            <ul class="dropdown">
-                                                <li>@Html.ActionLink("NIKE", "Index", "Nike")</li>
-                                                <li>@Html.ActionLink("ADDIDAS", "Index", "ADDIDAS")</li>
-                                                <li>@Html.ActionLink("VANS", "Index", "VANS")</li>
-                                                <li>@Html.ActionLink("CONVERSE", "Index", "CONVERSE")</li>
-                                                <li>@Html.ActionLink("PUMA", "Index", "PUMA")</li>
-                                            </ul>
-                                        </li>
+                                        <li>@Html.ActionLink("NIKE", "Index", "Nike")</li>
+                                        <li>@Html.ActionLink("ADDIDAS", "Index", "ADDIDAS")</li>
+                                        <li>@Html.ActionLink("VANS", "Index", "VANS")</li>
+                                        <li>@Html.ActionLink("CONVERSE", "Index", "CONVERSE")</li>
+                                        <li>@Html.ActionLink("PUMA", "Index", "PUMA")</li>                          
                                     </ul>
                                 </li>
                                 <li>@Html.ActionLink("Shop", "Index", "Shop")</li>
@@ -69,8 +62,8 @@
                     </div>
                     <div class="icons">
                         <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-                        <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
-                        <a href="cart.html" class="icons-btn d-inline-block bag">
+                        
+                        <a href="@Url.Action("Index", "Cart")" class="icons-btn d-inline-block bag">
                             <span class="icon-shopping-bag"></span>
                             <span class="number">2</span>
                         </a>

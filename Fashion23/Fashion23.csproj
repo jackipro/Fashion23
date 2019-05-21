@@ -118,6 +118,7 @@
     <Content Include="Content\images\about_1.jpg" />
     <Content Include="Content\images\about_1.png" />
     <Content Include="Content\images\adidas-logo.png" />
+    <Content Include="Content\images\bg-ball.jpg" />
     <Content Include="Content\images\blog_1.jpg" />
     <Content Include="Content\images\children.jpg" />
     <Content Include="Content\images\cloth_1.jpg" />
@@ -177,8 +178,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdidassController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\ConfirmController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NikeController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -288,6 +295,12 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Detail\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\Confirm\Index.cshtml" />
+    <Content Include="Views\Nike\Index.cshtml" />
+    <Content Include="Views\Adidass\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
