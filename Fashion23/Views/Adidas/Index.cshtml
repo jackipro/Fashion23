@@ -14,18 +14,28 @@
                     <div class="products-wrap border-top-0">
                         <div class="container-fluid">
                             <div class="row no-gutters products">
-                                <!-- Product, This is loop for database. Cmt T.Nam -->
-                                <div class="col-6 col-md-6 col-lg-6 border-top">
-                                    <a href="@Url.Action("Index", "Detail")" class="item">
-                                        <img src="Content/images/product_1.jpg" alt="Image" class="img-fluid">
-                                        <div class="item-info">
-                                            <h3>The Shoe</h3>
-                                            <span class="collection d-block">Summer Collection</span>
-                                            <strong class="price">$9.50</strong>
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- End Loop -->
+                                @foreach (var item in Model)
+            {
+                                    <div class="col-6 col-md-6 col-lg-4">
+                                        <a href="#" class="item">
+                                            <!--Product from Database loop-->
+
+                                            <img src='@Url.Content("~/Img/"+item.Image)' alt="Image" class="img-fluid"
+                                                 style="width:200px;height:300px;">>
+                                            <div class="item-info">
+                                                <mark> <h3>@item.Ten_Sp</h3> </mark>
+                                                <span class="collection d-block"></span>
+                                                <strong class="price">@item.DonGia VND</strong>
+                                            </div>
+                                            <!--End Product from Database loop-->
+                                        </a>
+                                    </div>
+
+                                }
+
+                            </div>
+                        </div>
+                    </div>
                             </div>
                         </div>
                     </div>
@@ -81,7 +91,6 @@
             </div>
         </div>
 
-    </div>
-</div>
+
 
 

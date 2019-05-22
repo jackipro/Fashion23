@@ -1,4 +1,6 @@
-﻿
+﻿@using Fashion23.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Product>
 @{
     ViewBag.Title = "Index";
 }
@@ -14,16 +16,21 @@
                             <div class="container-fluid">
                                 <div class="row no-gutters products">
                                     <!-- Product, This is loop for database. Cmt T.Nam -->
-                                    <div class="col-6 col-md-6 col-lg-6 border-top">
-                                        <a href="@Url.Action("Index", "Detail")" class="item">
-                                            <img src="Content/images/product_1.jpg" alt="Image" class="img-fluid">
-                                            <div class="item-info">
-                                                <h3>The Shoe</h3>
-                                                <span class="collection d-block">Summer Collection</span>
-                                                <strong class="price">$9.50</strong>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="col-6 col-md-6 col-lg-6 border-top">
+                                            <a href="@Url.Action("Index", "Detail")" class="item">
+                                                <img src='@Url.Content("~/Img/"+item.Image)' alt="Image" class="img-fluid"
+                                                     style="width:200px;height:300px;"> >
+                                                <div class="item-info">
+
+                                                    <span class="collection d-block">LauPhan</span>
+                                                    <strong class="price">@item.DonGia VND</strong>
+                                                    <mark> <h3>@item.Ten_Sp</h3> </mark>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
                                     <!-- End Loop -->
                                 </div>
                             </div>
@@ -33,13 +40,15 @@
                         <div class="col-md-12 text-center">
                             <div class="site-block-27">
                                 <ul>
-                                    <li><a href="#">&lt;</a></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
+                                    @*<li><a href="#">&lt;</a></li>*@
+                                    @*<li class="active"><span>1</span></li>*@
+                                    @*<li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#">4</a></li>
                                     <li><a href="#">5</a></li>
-                                    <li><a href="#">&gt;</a></li>
+                                    <li><a href="#">&gt;</a></li>*@
+                                    <li><span>@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) /@Model.PageCount</span> </li>
+                                    <li>@Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))</li>
                                 </ul>
                             </div>
                         </div>
@@ -82,3 +91,5 @@
 
         </div>
     </div>
+@* Tao link lien ket*@
+
