@@ -53,6 +53,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -172,23 +180,106 @@
     <Content Include="Content\js\owl.carousel.min.js" />
     <Content Include="Content\js\popper.min.js" />
     <Content Include="Content\js\slick.min.js" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Global.asax" />
+    <Content Include="Img\ad1.jpg" />
+    <Content Include="Img\ad2.jpg" />
+    <Content Include="Img\ad3.jpg" />
+    <Content Include="Img\ad4.jpg" />
+    <Content Include="Img\ad5.jpg" />
+    <Content Include="Img\fl1.jpg" />
+    <Content Include="Img\fl2.jpg" />
+    <Content Include="Img\fl3.jpg" />
+    <Content Include="Img\fl4.jpg" />
+    <Content Include="Img\fl5.jpg" />
+    <Content Include="Img\jd1.jpg" />
+    <Content Include="Img\jd2.jpg" />
+    <Content Include="Img\jd3.jpg" />
+    <Content Include="Img\jd4.jpg" />
+    <Content Include="Img\jd5.jpg" />
+    <Content Include="Img\Logo\Adidas.jpg" />
+    <Content Include="Img\Logo\Fila.jpg" />
+    <Content Include="Img\Logo\Jordan.jpg" />
+    <Content Include="Img\Logo\Nike.jpg" />
+    <Content Include="Img\Logo\Puma.jpg" />
+    <Content Include="Img\nk1.jpg" />
+    <Content Include="Img\nk2.jpg" />
+    <Content Include="Img\nk3.jpg" />
+    <Content Include="Img\nk4.jpg" />
+    <Content Include="Img\nk5.jpg" />
+    <Content Include="Img\pm1.jpg" />
+    <Content Include="Img\pm2.jpg" />
+    <Content Include="Img\pm3.jpg" />
+    <Content Include="Img\pm4.jpg" />
+    <Content Include="Img\pm5.jpg" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
-    <Compile Include="Controllers\AdidassController.cs" />
+    <Compile Include="Controllers\AdidasController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ConfirmController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DetailController.cs" />
+    <Compile Include="Controllers\FilaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JordanController.cs" />
     <Compile Include="Controllers\NikeController.cs" />
+    <Compile Include="Controllers\PumaController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Feedback.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Size.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supplier.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -288,6 +379,13 @@
     <Content Include="Content\scss\_site-base.scss" />
     <Content Include="Content\scss\_site-blocks.scss" />
     <Content Include="Content\scss\_site-navbar.scss" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -300,7 +398,11 @@
     <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\Confirm\Index.cshtml" />
     <Content Include="Views\Nike\Index.cshtml" />
-    <Content Include="Views\Adidass\Index.cshtml" />
+    <Content Include="Views\Adidas\Index.cshtml" />
+    <Content Include="Views\Home\HomePartial.cshtml" />
+    <Content Include="Views\Fila\Index.cshtml" />
+    <Content Include="Views\Puma\Index.cshtml" />
+    <Content Include="Views\Jordan\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -310,7 +412,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

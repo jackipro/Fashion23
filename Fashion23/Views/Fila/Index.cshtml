@@ -1,5 +1,4 @@
-﻿@using Fashion23.Models
-@model List<Product>
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,27 +14,21 @@
                     <div class="products-wrap border-top-0">
                         <div class="container-fluid">
                             <div class="row no-gutters products">
-                                <!-- Product, This is loop for database. Cmt T.Nam -->
-                                
-                                    @foreach (var item in Model)
-                                    {
-                                        <div class="col-6 col-md-6 col-lg-6 border-top">
-                                            <a href="@Url.Action("Index", "Detail")" class="item">
-                                                <img src='@Url.Content("~/Img/"+item.Image)' alt="Image" class="img-fluid"
-                                                     style="width:200px;height:300px;"> >
-                                                <div class="item-info">
-                                                    
-                                                    <span class="collection d-block">LauPhan</span>
-                                                    <strong class="price">@item.DonGia VND</strong>
-                                                    <mark> <h3>@item.Ten_Sp</h3> </mark>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    }
+                                @foreach (var item in Model)
+                                {
+                                    <div class="col-6 col-md-6 col-lg-6 border-top">
+                                        <a href="@Url.Action("Index", "Detail")" class="item">
+                                            <img src='@Url.Content("~/Img/"+item.Image)' alt="Image" class="img-fluid"
+                                                 style="width:200px;height:300px;"> >
+                                            <div class="item-info">
 
-
-                                        
-                                <!-- End Loop -->
+                                                <span class="collection d-block">LauPhan</span>
+                                                <strong class="price">@item.DonGia VND</strong>
+                                                <mark> <h3>@item.Ten_Sp</h3> </mark>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -93,5 +86,4 @@
 
     </div>
 </div>
-
 
