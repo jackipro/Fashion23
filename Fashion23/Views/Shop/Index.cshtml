@@ -29,17 +29,20 @@
                     <div class="products-wrap border-top-0">
                         <div class="container-fluid">
                             <div class="row no-gutters products">
+                                
                                 @{ foreach (var item in Model)
                                     {
                                         <div class="col-6 col-md-6 col-lg-6 border-top">
                                             <a href="@Url.Action("Details", "Shop")" class="item">
-                                                <img src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">
-                                                <div class="item-info">
-                                                    <h3>@item.Ten_Sp</h3>
-                                                    <span class="collection d-block">Summer Collection</span>
-                                                    <strong class="price">@item.DonGia VNĐ</strong>
-                                                </div>
-                                            </a>
+                                                <img src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">                                          
+                                                    <a href="@Url.Action("Index", "Cart")" class="btn btn-primary rounded-0">Add To Cart</a>
+                                                    <div class="item-info">
+                                                      <mark>  <h3>@item.Ten_Sp</h3> </mark>
+                                                        <span class="collection d-block">Summer Collection</span>
+                                                        <strong class="price">@item.DonGia VNĐ</strong>
+
+                                                    </div>
+</a>
                                         </div>
                                     }
                                 }
@@ -66,7 +69,7 @@
                        @foreach (var item in Model)
                        {
 
-                        <li class="mb-1"><a href="#" class="d-flex"><span>@item.Ten_Sp</span> <span class="text-black ml-auto">(@item.Soluong)</span></a></li>
+                        <li class="mb-1"><a href="#" class="d-flex"><span>@item.MoTa</span> <span class="text-black ml-auto">(@item.Soluong)</span></a></li>
                        }
 
                     </ul>

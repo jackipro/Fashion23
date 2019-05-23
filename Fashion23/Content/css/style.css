@@ -604,9 +604,9 @@ a {
         color: #000;
         font-size: 1.3rem; }
         .products .item .item-info .price del, .product .item .item-info .price del {
-          color: #adb5bd;
+          color: #000;
           margin-left: 2%; 
-          font-weight: bold;
+          
         }
         @media (max-width: 991.98px) {
           .products .item .item-info .price, .product .item .item-info .price {
