@@ -17,9 +17,9 @@ namespace Fashion23.Controllers
             //Tao bien so san pham tren trang
             int pageSize = 10;
             //Tao bien so trang
-            int pageNumber = (page ?? 1);
-            
+            int pageNumber = (page ?? 1);         
             return View(db.Products.ToList().OrderBy(n => n.DonGia).ToPagedList(pageNumber,pageSize));
+            
         }
         
     }
