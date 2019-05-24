@@ -1,0 +1,140 @@
+﻿@model Fashion23.Models.Customer
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ViewBag.Title - Login Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="Content/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/css/magnific-popup.css">
+    <link rel="stylesheet" href="Content/css/jquery-ui.css">
+    <link rel="stylesheet" href="Content/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="Content/css/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" href="Content/css/aos.css">
+
+    <link rel="stylesheet" href="Content/css/style.css">
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap/sb-admin.css" rel="stylesheet" />
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <form>
+                    <h2>Đăng Ký</h2>
+
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+
+                        <h4>Customer</h4>
+                        <hr />
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Password</label>
+                            @*@Html.ValidationSummary(true,"", new { @class = "text-danger" })*@
+                            <div class="form-group">
+                                @*@Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MatKhau, " ", new { @class = "text-danger" })
+                                </div>
+                                @*<input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">*@
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Name </label>
+                            @*@Html.LabelFor(model => model.TenDayDu, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.TenDayDu, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TenDayDu, " ", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            @*@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*<div class="form-group">
+                @Html.LabelFor(model => model.HinhAnh, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HinhAnh, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HinhAnh, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DaKichHoat, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.DaKichHoat)
+                        @Html.ValidationMessageFor(model => model.DaKichHoat, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>*@
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-default" />
+                            </div>
+                        </div>
+
+                    }
+
+                    <div>
+                        @Html.ActionLink("Return", "Index")
+                    </div>
+
+                    @*<script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+         Core plugin JavaScript
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>*@
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Remember Password
+                            </label>
+                        </div>
+                    </div>
+                    
+                                <a class="btn btn-primary btn-block" href="~/Areas/Admin/Views/Product/Index.cshtml>Login
+                                <i class="fa fa-fw fa-dashboard"></i>
+                                @*<span class="nav-link-text">Menager Product</span>*@
+                                </a>
+                    
+                </form>
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="register.html">Register an Account</a>
+                    <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/jquery.easing.min.js"></script>
+</body>
+</html>
