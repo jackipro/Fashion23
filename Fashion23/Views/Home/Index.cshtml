@@ -1,8 +1,50 @@
-﻿
+﻿@using Fashion23.Models
+@model List<Product>
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Fashion23";
 }
+<div class="site-blocks-cover" data-aos="fade">
+    <div class="container">
 
-<h2>cccccc</h2>
+        <div class="row align-items-center">
+            <div class="col-lg-5 text-center">
+                <div class="featured-hero-product w-100">
+                    <h1 class="mb-2">SportWear</h1>
+                    <h4>Nike Collection</h4>
+                    <div class="price mt-3 mb-5"><strong>Sportwear Fashion</strong></div>
+                    <p><a href="@Url.Action("Index", "Shop")" class="btn btn-outline-primary rounded-0">Shop Now</a> <a href="@Url.Action("Index", "Contact")" class="btn btn-primary rounded-0">Contact Us</a></p>
+                </div>
+            </div>
+            <div class="col-lg-7 align-self-end text-center text-lg-right">
+                <img  src="~/Content/images/bg-ball.jpg" alt="Image" class="img-fluid img-1">
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="products-wrap border-top-0">
+    <div class="container-fluid">
+        <div class="row no-gutters products">
+            @foreach (var item in Model)
+            {
+                <div class="col-6 col-md-6 col-lg-4">
+                    <a href="#" class="item">
+                        <!--Product from Database loop-->
+                        <img style="height:300px; width:250px" src='@Url.Content("~/Img/"+item.Image)' alt="Image" class="img-fluid" />
+                        <a href="@Url.Action("Index", "Contact")" class="btn btn-primary rounded-0">Add To Cart</a>
+                        <div class="item-info">
+                            <h3 style="color: black">@item.Ten_Sp</h3> 
+                            <span class="collection d-block"></span>
+                            <strong class="price">@item.DonGia VND</strong>
+                        </div>
+                        <!--End Product from Database loop-->
+                    </a>
+                </div>
+            
+            }
+           
+        </div>
+    </div>
+</div>
 
