@@ -417,7 +417,6 @@
     <Content Include="Views\Confirm\Index.cshtml" />
     <Content Include="Views\Nike\Index.cshtml" />
     <Content Include="Views\Adidas\Index.cshtml" />
-    <Content Include="Views\Home\HomePartial.cshtml" />
     <Content Include="Views\Fila\Index.cshtml" />
     <Content Include="Views\Puma\Index.cshtml" />
     <Content Include="Views\Jordan\Index.cshtml" />
