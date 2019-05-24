@@ -34,10 +34,10 @@
                                     {
                                         <div class="col-6 col-md-6 col-lg-6 border-top">
                                             <a href="@Url.Action("Details", "Shop")" class="item">
-                                                <img style="height:300px; width: 250px" src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">                                          
+                                                <img src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">                                          
                                                     <a href="@Url.Action("Index", "Cart")" class="btn btn-primary rounded-0">Add To Cart</a>
                                                     <div class="item-info">
-                                                        <h3 style="color: black">@item.Ten_Sp</h3> 
+                                                      <mark>  <h3>@item.Ten_Sp</h3> </mark>
                                                         <span class="collection d-block">Summer Collection</span>
                                                         <strong class="price">@item.DonGia VNĐ</strong>
 
