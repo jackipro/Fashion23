@@ -2,7 +2,7 @@
 @using PagedList.Mvc;
 @model PagedList.PagedList<Product>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Shop";
 }
 <div class="site-section">
     <div class="container">
@@ -33,12 +33,12 @@
                                 @{ foreach (var item in Model)
                                     {
                                         <div class="col-6 col-md-6 col-lg-6 border-top">
-                                            <a href="@Url.Action("Details", "Shop")" class="item">
-                                                <img src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">                                          
+                                            <a class="item">
+                                                <img style="height:300px; width: 250px" src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">                                          
                                                     <a href="@Url.Action("Index", "Cart")" class="btn btn-primary rounded-0">Add To Cart</a>
                                                     <div class="item-info">
-                                                      <mark>  <h3>@item.Ten_Sp</h3> </mark>
-                                                        <span class="collection d-block">Summer Collection</span>
+                                                        <h3 style="color: black">@item.Ten_Sp</h3> 
+                                                        <span class="collection d-block">@item.Soluong</span>
                                                         <strong class="price">@item.DonGia VNĐ</strong>
 
                                                     </div>
@@ -66,11 +66,12 @@
                 <div class="border p-4 mb-4">
                     <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                     <ul class="list-unstyled mb-0">
-                       @foreach (var item in Model)
-                       {
+                        <li>@Html.ActionLink("NIKE", "Index", "Nike")</li>
+                        <li>@Html.ActionLink("ADDIDAS", "Index", "Adidas")</li>
+                        <li>@Html.ActionLink("FILA", "Index", "Fila")</li>
 
-                        <li class="mb-1"><a href="#" class="d-flex"><span>@item.MoTa</span> <span class="text-black ml-auto">(@item.Soluong)</span></a></li>
-                       }
+                        <li>@Html.ActionLink("PUMA", "Index", "PUMA")</li>
+                        <li>@Html.ActionLink("JORDAN", "Index", "Jordan")</li>  
 
                     </ul>
                 </div>
