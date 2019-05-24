@@ -1,7 +1,7 @@
 ﻿@using Fashion23.Models;
 @model List<Product>
 @{
-    ViewBag.Title = "Fashion23";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,21 +15,20 @@
                     <div class="products-wrap border-top-0">
                         <div class="container-fluid">
                             <div class="row no-gutters products">
-                                @{ foreach (var item in Model)
-                                    {
-                                        <div class="col-6 col-md-6 col-lg-6 border-top">
-                                            <a class="item">
-                                                <img style="height:300px; width: 250px" src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">
-                                                <a href="@Url.Action("Index", "Cart")" class="btn btn-primary rounded-0">Add To Cart</a>
-                                                <div class="item-info">
-                                                    <h3 style="color: black">@item.Ten_Sp</h3>
-                                                    <span class="collection d-block">@item.Soluong</span>
-                                                    <strong class="price">@item.DonGia VNĐ</strong>
+                                @foreach (var item in Model)
+                                {
+                                    <div class="col-6 col-md-6 col-lg-6 border-top">
+                                        <a href="@Url.Action("Index", "Detail")" class="item">
+                                            <img src='@Url.Content("~/Img/"+item.Image)' alt="Image" class="img-fluid"
+                                                 style="width:200px;height:300px;"> >
+                                            <div class="item-info">
 
-                                                </div>
-                                            </a>
-                                        </div>
-                                    }
+                                                <span class="collection d-block">LauPhan</span>
+                                                <strong class="price">@item.DonGia VND</strong>
+                                                <mark> <h3>@item.Ten_Sp</h3> </mark>
+                                            </div>
+                                        </a>
+                                    </div>
                                 }
                             </div>
                         </div>
@@ -56,19 +55,32 @@
                 <div class="border p-4 mb-4">
                     <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                     <ul class="list-unstyled mb-0">
-                        <li style="color:aqua; font-size:50px ">JORDAN</li>
-
-                        <li>@Html.ActionLink("ADIDAS", "Index", "Adidas")</li>
-                        <li>@Html.ActionLink("FILA", "Index", "Fila")</li>
-
-                        <li>@Html.ActionLink("PUMA", "Index", "PUMA")</li>
-                        <li>@Html.ActionLink("NIKE", "Index", "Nike")</li>
+                        <li class="mb-1"><a href="#" class="d-flex"><span>Men</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                        <li class="mb-1"><a href="#" class="d-flex"><span>Women</span> <span class="text-black ml-auto">(2,550)</span></a></li>
+                        <li class="mb-1"><a href="#" class="d-flex"><span>Children</span> <span class="text-black ml-auto">(2,124)</span></a></li>
                     </ul>
                 </div>
 
+                <div class="border p-4 mb-4">
 
+
+                    <div class="mb-4">
+                        <h3 class="mb-3 h6 text-uppercase text-black d-block">Size</h3>
+                        <label for="s_sm" class="d-flex">
+                            <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span class="text-black">Small (2,319)</span>
+                        </label>
+                        <label for="s_md" class="d-flex">
+                            <input type="checkbox" id="s_md" class="mr-2 mt-1"> <span class="text-black">Medium (1,282)</span>
+                        </label>
+                        <label for="s_lg" class="d-flex">
+                            <input type="checkbox" id="s_lg" class="mr-2 mt-1"> <span class="text-black">Large (1,392)</span>
+                        </label>
+                    </div>
+
+                    <div class="mb-4">
+
+                    </div>
+
+                </div>
             </div>
         </div>
-
-    </div>
-</div>

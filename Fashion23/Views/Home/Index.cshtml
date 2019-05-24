@@ -12,7 +12,7 @@
                     <h1 class="mb-2">SportWear</h1>
                     <h4>Nike Collection</h4>
                     <div class="price mt-3 mb-5"><strong>Sportwear Fashion</strong></div>
-                    <p><a href="@Url.Action("Index", "Shop")" class="btn btn-outline-primary rounded-0">Shop Now</a> <a href="@Url.Action("Index", "Contact")" class="btn btn-primary rounded-0">Contact Us</a></p>
+                    <p><a href="@Url.Action("Index", "Admin")" class="btn btn-outline-primary rounded-0">Admin</a> <a href="@Url.Action("Index", "Contact")" class="btn btn-primary rounded-0">Contact Us</a></p>
                 </div>
             </div>
             <div class="col-lg-7 align-self-end text-center text-lg-right">
@@ -31,10 +31,10 @@
                 <div class="col-6 col-md-6 col-lg-4">
                     <a href="#" class="item">
                         <!--Product from Database loop-->
-                        <img style="height:300px; width:250px" src='@Url.Content("~/Img/"+item.Image)' alt="Image" class="img-fluid" />
+                        <img src='@Url.Content("~/Img/"+item.Image)' alt="Image" class="img-fluid" />
                         <a href="@Url.Action("Index", "Contact")" class="btn btn-primary rounded-0">Add To Cart</a>
                         <div class="item-info">
-                            <h3 style="color: black">@item.Ten_Sp</h3> 
+                            <mark> <h3>@item.Ten_Sp</h3> </mark>
                             <span class="collection d-block"></span>
                             <strong class="price">@item.DonGia VND</strong>
                         </div>
