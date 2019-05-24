@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Fashion23.Controllers
 {
-    public class AboutController : Controller
+    public class RegularController : Controller
     {
-        // GET: About
+        // GET: Regular
         public ActionResult Index()
         {
             return View();
