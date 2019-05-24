@@ -13,7 +13,7 @@ namespace Fashion23.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var lstPro = db.Products.Take(6).ToList();
+            var lstPro = db.Products.Take(5).ToList();
 
             return View(lstPro);
         }
