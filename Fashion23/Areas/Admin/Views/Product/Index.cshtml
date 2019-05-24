@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Fashion23.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Quản Lí Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Data Table Example
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Start Date</th>
+                        <th>Product Avalible</th>
+                        <th>Description</th>
+                        <th>Number</th>
+                        <th>View</th>
+                        <th>Size</th>
+                        <th>Supplier</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Start Date</th>
+                        <th>Product Avalible</th>
+                        <th>Description</th>
+                        <th>Number</th>
+                        <th>View</th>
+                        <th>Size</th>
+                        <th>Supplier</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ten_Sp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DonGia)
+                            </td>
+                            <td>
+                                <img src="~/Img/@item.Image" width="100px"/>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgaySanPham)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HangCoSan)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MoTa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Soluong)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Views)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Size.Size1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Supplier.Ten)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
