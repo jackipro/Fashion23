@@ -18,9 +18,17 @@ namespace Fashion23.Controllers
             int pageSize = 10;
             //Tao bien so trang
             int pageNumber = (page ?? 1);         
-            return View(db.Products.ToList().OrderBy(n => n.DonGia).ToPagedList(pageNumber,pageSize));
-            
+            return View(db.Products.ToList().OrderBy(n => n.DonGia).ToPagedList(pageNumber,pageSize));           
         }
-        
+        public ViewResult ChiTiet(int MaSP)
+        {
+            Product sp = db.Products.SingleOrDefault(n => n.Id == MaSP);
+            if (sp == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sp);
+        }
     }
 }
