@@ -31,15 +31,16 @@
                 <div class="col-6 col-md-6 col-lg-4">
                     <a href="#" class="item">
                         <!--Product from Database loop-->
-                        <img style="height:300px; width: 250px" src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">
-                        <a href="@Url.Action("Index", "Contact")" class="btn btn-primary rounded-0">Add To Cart</a>
-                        <div class="item-info">
-                            <mark> <h3>@item.Ten_Sp</h3> </mark>
-                            <span class="collection d-block"></span>
-                            <strong class="price">@item.DonGia VND</strong>
-                        </div>
-                        <!--End Product from Database loop-->
-                    </a>
+                        <a href="@Url.Action("ChiTiet","Shop", new {@MaSP = item.Id })" class="item">
+                            <img style="height:300px; width: 250px" src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">
+                            <a href="@Url.Action("ChiTiet","Shop", new {@MaSP = item.Id })" class="btn btn-primary rounded-0">View Detail</a>
+                            <div class="item-info">
+                                 <h3>@item.Ten_Sp</h3> 
+                                <span class="collection d-block"></span>
+                                <strong class="price">@item.DonGia VND</strong>
+                            </div>
+                            <!--End Product from Database loop-->
+                        </a>
                 </div>
             
             }

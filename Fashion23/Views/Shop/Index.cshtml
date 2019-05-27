@@ -1,6 +1,8 @@
 ﻿@using Fashion23.Models;
 @using PagedList.Mvc;
+
 @model PagedList.PagedList<Product>
+
 @{
     ViewBag.Title = "Shop";
 }
@@ -32,18 +34,22 @@
                                 
                                 @{ foreach (var item in Model)
                                     {
-                                        <div class="col-6 col-md-6 col-lg-6 border-top">
-                                            <a href="@Url.Action("ChiTiet","Shop", new {@MaSP = item.Id })" class="item">
-                                                <img style="height:300px; width: 250px" src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">                                          
-                                                    <a href="@Url.Action("Index", "Cart")" class="btn btn-primary rounded-0">Add To Cart</a>
-                                                    <div class="item-info">
-                                                        <h3 style="color: black">@item.Ten_Sp</h3> 
-                                                        <span class="collection d-block">@item.Soluong</span>
-                                                        <strong class="price">@item.DonGia VNĐ</strong>
-
-                                                    </div>
-</a>
+                                <div class="col-6 col-md-6 col-lg-6 border-top">
+                                    <!--Nhap vao ra trang chi tiet san pham-->
+                                    <a href="@Url.Action("ChiTiet","Shop", new {@MaSP = item.Id })" class="item">
+                                        <!-- --------------------------------------- -->
+                                        <img style="height:300px; width: 250px" src="@Url.Content("~/Img/"+item.Image)" alt="Image" class="img-fluid">
+                                        <!--Nut Chi tiet-->                                    
+                                        <a href="@Url.Action("ChiTiet","Shop", new {@MaSP = item.Id })" class="btn btn-primary rounded-0">View Detail</a>
+                                        <!-- --------------------------------------  -->
+                                        <div class="item-info">
+                                            <h3 style="color: black">@item.Ten_Sp</h3>
+                                            <span class="collection d-block">@item.Soluong</span>
+                                            <strong class="price">@String.Format("{0:0,0}", @item.DonGia.ToString()) VNĐ
+                                            </strong>
                                         </div>
+                                    </a>
+                                </div>
                                     }
                                 }
                             </div>

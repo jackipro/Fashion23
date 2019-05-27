@@ -1,9 +1,9 @@
-﻿
+﻿@using Fashion23.Models
+@model List<GioHang>
 @{
-    ViewBag.Title = "Cart";
+    ViewBag.Title = "GioHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="site-wrap">
     <div class="site-section">
         <div class="container">
@@ -23,29 +23,35 @@
                             </thead>
                             <tbody>
                                 <!-- Product form database -->
+                                @foreach (var item in Model)
+                                {
                                 <tr>
                                     <td class="product-thumbnail">
-                                        <img src="Content/images/product_1.jpg" alt="Image" class="img-fluid">
+                                        <img src="~/Img/@item.sHinhAnh" alt="Image" class="img-fluid">
                                     </td>
                                     <td class="product-name">
-                                        <h2 class="h5 text-black">The Shoe</h2>
+                                        <h2 class="h5 text-black">@item.sTenSP</h2>
                                     </td>
-                                    <td>$49.00</td>
+                                    <td>@String.Format("{0:0,0}", @item.dDonGia.ToString()) VNĐ</td>
                                     <td>
                                         <div class="input-group mb-3" style="max-width: 120px;">
                                             <div class="input-group-prepend">
                                                 <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
                                             </div>
-                                            <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                            <input type="text" class="form-control text-center" value="@item.iSoLuong" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                                             </div>
                                         </div>
 
                                     </td>
-                                    <td>$49.00</td>
-                                    <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
+                                    <td>@String.Format("{0:0,0}", @item.ThanhTien.ToString()) VNĐ</td>
+                                    @using (Html.BeginForm("XoaGioHang", "GioHang", new { @iMaSP = item.iMaSP }))
+                                    {
+                                    <td><a href="@Url.Action("GioHang","GioHang")" class="btn btn-primary height-auto btn-sm">Delete</a></td>
+                                    }
                                 </tr>
+                                }
                                 <!--End Loop-->
                             </tbody>
                         </table>
@@ -60,16 +66,16 @@
                             <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
                         </div>
                         <div class="col-md-6">
-                            <button class="btn btn-outline-primary btn-sm btn-block">@Html.ActionLink("Continue Shopping" , "Index", "Shop")</button>
+                            <button class="btn btn-outline-primary btn-sm btn-block">@Html.ActionLink("Continue Shopping", "Index", "Shop")</button>
                         </div>
-                    </div>                   
+                    </div>
                 </div>
-                <div class="col-md-6 pl-5">
+                <div class="col-md-6 pl-5">                 
                     <div class="row justify-content-end">
                         <div class="col-md-7">
                             <div class="row">
                                 <div class="col-md-12 text-right border-bottom mb-5">
-                                    <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                                    <h3 class="text-black h4 text-uppercase"></h3>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -77,7 +83,7 @@
                                     <span class="text-black">Subtotal</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black">$230.00</strong>
+                                    <strong class="text-black"></strong>
                                 </div>
                             </div>
                             <div class="row mb-5">
@@ -96,8 +102,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    
+                </div>                    
             </div>
         </div>
     </div>
-
+</div>
