@@ -1,14 +1,14 @@
 ﻿@model Fashion23.Models.Product
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Create</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
@@ -16,8 +16,6 @@
         <h4>Product</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
-
         <div class="form-group">
             @Html.LabelFor(model => model.Ten_Sp, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -25,8 +23,6 @@
                 @Html.ValidationMessageFor(model => model.Ten_Sp, "", new { @class = "text-danger" })
             </div>
         </div>
-
-       
 
         <div class="form-group">
             @Html.LabelFor(model => model.DonGia, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -70,13 +66,13 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.Id_NhaCungCap, "Id_NhaCungCap", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Id_NhaCungCap", new SelectList(ViewBag.NhaCungCap_Type,"Id","Ten_Sp",Model.Id_NhaCungCap))
+                @Html.DropDownList("Id_NhaCungCap", new SelectList(ViewBag.NhaCungCap_Type, "Ten_Sp", "Id_NhaCungCap", Model.Id_NhaCungCap))
                 @Html.ValidationMessageFor(model => model.Id_NhaCungCap)
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Soluong, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -96,7 +92,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>

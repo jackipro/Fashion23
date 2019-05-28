@@ -16,5 +16,28 @@ namespace Fashion23.Areas.Admin.Controllers
             var order = model1.OrderDetails.OrderByDescending(x => x.Id).ToList();
             return View(order);
         }
+        [HttpGet]
+        public ActionResult Creat()
+        {
+           // var order = model1.OrderDetails.OrderByDescending(x => x.Id).ToList();
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(int Id , OrderDetail or)
+        {
+            var orders = new OrderDetail();
+
+            orders.DonGia = or.DonGia;
+            orders.Id = or.Id;
+            //orders.IDSanPham = or.IDSanPham;
+            orders.Order = or.Order;
+            orders.Product = or.Product;
+            orders.SoLuong = or.SoLuong;
+            orders.GiamGia = or.GiamGia;
+            model1.OrderDetails.Add(orders);
+            model1.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }

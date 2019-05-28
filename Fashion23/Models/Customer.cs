@@ -21,8 +21,8 @@ namespace Fashion23.Models
         }
     
         public string Id { get; set; }
-        public string MatKhau { get; set; }
-        public string TenDayDu { get; set; }
+        public string Password { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public string HinhAnh { get; set; }
         public bool DaKichHoat { get; set; }

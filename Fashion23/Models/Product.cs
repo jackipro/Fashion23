@@ -22,7 +22,6 @@ namespace Fashion23.Models
     
         public int Id { get; set; }
         public string Ten_Sp { get; set; }
-        public int IDSize { get; set; }
         public double DonGia { get; set; }
         public string Image { get; set; }
         public System.DateTime NgaySanPham { get; set; }
@@ -34,7 +33,6 @@ namespace Fashion23.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual Size Size { get; set; }
         public virtual Supplier Supplier { get; set; }
     }
 }

@@ -53,8 +53,8 @@
                             <div class="form-group">
                                 @*@Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-2" })*@
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.MatKhau, " ", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, " ", new { @class = "text-danger" })
                                 </div>
                                 @*<input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">*@
                             </div>
@@ -63,8 +63,8 @@
                             <label for="exampleInputEmail1"> Name </label>
                             @*@Html.LabelFor(model => model.TenDayDu, htmlAttributes: new { @class = "control-label col-md-2" })*@
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.TenDayDu, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.TenDayDu, " ", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, " ", new { @class = "text-danger" })
                             </div>
                         </div>
 
