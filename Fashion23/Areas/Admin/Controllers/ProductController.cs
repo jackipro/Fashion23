@@ -21,7 +21,7 @@ namespace Fashion23.Areas.Admin.Controllers
         {
             var product = model.Products.FirstOrDefault(x => x.Id == Id);
            // ViewBag.MatKhau_Type = model.Customers.OrderByDescending(x => x.Id).ToList();
-               ViewBag.NhaCungCap_Type = model.Products.OrderByDescending(x => x.Id).ToList();
+              // ViewBag.NhaCungCap_Type = model.Products.OrderByDescending(x => x.Id).ToList();
             return View(product);
         }
         [HttpPost]
@@ -34,7 +34,7 @@ namespace Fashion23.Areas.Admin.Controllers
             product.Image = p.Image;
             product.MoTa = p.MoTa;
             product.NgaySanPham = p.NgaySanPham;
-            product.Id_NhaCungCap= p.Id_NhaCungCap;
+          //  product.Id_NhaCungCap= p.Id_NhaCungCap;
             product.Soluong = p.Soluong;
           // product.Supplier = p.Supplier;
             //product.Views = p.Views;
@@ -84,7 +84,7 @@ namespace Fashion23.Areas.Admin.Controllers
             var product = model.Products.FirstOrDefault(x => x.Id == Id);
             model.Products.Remove(product);
             model.SaveChanges();
-            return View(product);
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public ActionResult Details(int Id)

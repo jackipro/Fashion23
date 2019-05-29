@@ -70,13 +70,13 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.Id_NhaCungCap, "Id_NhaCungCap", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("Id_NhaCungCap", new SelectList(ViewBag.NhaCungCap_Type,"Id","Ten_Sp",Model.Id_NhaCungCap))
                 @Html.ValidationMessageFor(model => model.Id_NhaCungCap)
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Soluong, htmlAttributes: new { @class = "control-label col-md-2" })
