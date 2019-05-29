@@ -27,12 +27,10 @@ namespace Fashion23.Models
         public System.DateTime NgaySanPham { get; set; }
         public bool HangCoSan { get; set; }
         public string MoTa { get; set; }
-        public int Id_NhaCungCap { get; set; }
         public int Soluong { get; set; }
         public int Views { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual Supplier Supplier { get; set; }
     }
 }
